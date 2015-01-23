@@ -17,6 +17,8 @@ class CustomizeViewController: UIViewController, UICollectionViewDelegateFlowLay
 
     @IBOutlet weak var customizeCollectionView: UICollectionView!
     
+    var selected = -1
+    
     var sectionNames : [String] = ["STYLES", "COLORS"]
     var sectionData = Array<Array<Items>>()
 
@@ -132,6 +134,27 @@ class CustomizeViewController: UIViewController, UICollectionViewDelegateFlowLay
         
         return cell
     }
+    
+    
+    func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
+    
+    var customizeCell = self.customizeCollectionView.dequeueReusableCellWithReuseIdentifier("CustomizeCell", forIndexPath: indexPath) as CustomCollectionViewCell
+    customizeCell.selected = true
+    
+    if(selected != -1){
+        
+        var previous = self.customizeCollectionView.dequeueReusableCellWithReuseIdentifier("CustomizeCell", forIndexPath: NSIndexPath(forRow: selected, inSection: 0)) as CustomCollectionViewCell
+        previous.selected = false
+        
+    }
+        
+    let customize = sectionData[indexPath.section][indexPath.row]
+    customizeCollectionView.reloadData()
+
+    
+    
+    }
+
 
 
 }

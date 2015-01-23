@@ -179,21 +179,21 @@ class WantsViewController: UIViewController, UICollectionViewDelegateFlowLayout,
     }
     
     //selection info
-    func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
+    /*func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
         
         var itemCell = self.itemCollectionView.dequeueReusableCellWithReuseIdentifier("ItemCell", forIndexPath: indexPath) as CustomCollectionViewCell
-        itemCell.selected = true;
+        itemCell.selected = true
         
         if(selected != -1){
             var previous = self.itemCollectionView.dequeueReusableCellWithReuseIdentifier("ItemCell", forIndexPath: NSIndexPath(forRow: selected, inSection: 0)) as CustomCollectionViewCell
-            previous.selected = false;
+            previous.selected = false
         }
-        selected = indexPath.row;
-        itemCollectionView.reloadData();
+        selected = indexPath.row
+        itemCollectionView.reloadData()
         
         println(itemCell.selected)
         println(selected)
         
-    }
+    }*/
 
 }

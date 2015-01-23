@@ -8,7 +8,6 @@
         <!--Customize-->
         <scene sceneID="lz8-6s-JXq">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="jPP-ta-ng1" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController id="hjT-SZ-HPf" customClass="CustomizeViewController" customModule="trunkclub" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="iSc-V2-1SU"/>
@@ -110,17 +109,13 @@
                     </view>
                     <toolbarItems/>
                     <navigationItem key="navigationItem" title="Customize" id="YQG-V3-mGS">
-                        <barButtonItem key="leftBarButtonItem" title="Back" id="3Ah-r4-pHd">
-                            <connections>
-                                <segue destination="M6g-d4-HsY" kind="show" id="YSy-x2-Ems"/>
-                            </connections>
-                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="Next" id="Rrf-6e-it9"/>
                     </navigationItem>
                     <connections>
                         <outlet property="customizeCollectionView" destination="JPY-oC-xiy" id="joB-N2-mYg"/>
                     </connections>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="jPP-ta-ng1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="641" y="-330"/>
         </scene>
@@ -271,7 +266,4 @@
     <resources>
         <image name="hamburger-icon" width="24" height="24"/>
     </resources>
-    <inferredMetricsTieBreakers>
-        <segue reference="YSy-x2-Ems"/>
-    </inferredMetricsTieBreakers>
 </document>
