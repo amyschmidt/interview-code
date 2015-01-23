@@ -18,27 +18,21 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RjV-8a-D1R">
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RjV-8a-D1R">
                                 <rect key="frame" x="16" y="0.0" width="568" height="556"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qu1-Xv-hbc">
-                                        <rect key="frame" x="0.0" y="0.0" width="568" height="800"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="568" height="600"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="STYLE" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fc6-Wb-bXM" userLabel="STYLE">
-                                                <rect key="frame" x="0.0" y="20" width="52" height="21"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="JPY-oC-xiy" userLabel="Customize Collection View">
-                                                <rect key="frame" x="0.0" y="56" width="568" height="200"/>
+                                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="JPY-oC-xiy" userLabel="Customize Collection View">
+                                                <rect key="frame" x="0.0" y="0.0" width="568" height="600"/>
                                                 <color key="backgroundColor" name="controlHighlightColor" catalog="System" colorSpace="catalog"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="height" constant="200" id="WZm-y8-7Qb"/>
+                                                    <constraint firstAttribute="height" constant="600" id="WZm-y8-7Qb"/>
                                                 </constraints>
                                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="1" minimumInteritemSpacing="0.0" id="PZe-bm-bap">
                                                     <size key="itemSize" width="330" height="49"/>
-                                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                                    <size key="headerReferenceSize" width="50" height="50"/>
                                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                                 </collectionViewFlowLayout>
@@ -78,6 +72,10 @@
                                                         </connections>
                                                     </collectionViewCell>
                                                 </cells>
+                                                <collectionReusableView key="sectionHeaderView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" restorationIdentifier="CustomizeHeader" reuseIdentifier="CustomizeHeader" id="UL7-kA-ZAs">
+                                                    <rect key="frame" x="0.0" y="0.0" width="568" height="50"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                </collectionReusableView>
                                                 <connections>
                                                     <outlet property="dataSource" destination="hjT-SZ-HPf" id="dj4-MQ-JGN"/>
                                                     <outlet property="delegate" destination="hjT-SZ-HPf" id="ddw-Wg-tGU"/>
@@ -86,12 +84,10 @@
                                         </subviews>
                                         <color key="backgroundColor" name="controlHighlightColor" catalog="System" colorSpace="catalog"/>
                                         <constraints>
-                                            <constraint firstItem="Fc6-Wb-bXM" firstAttribute="top" secondItem="qu1-Xv-hbc" secondAttribute="top" constant="20" id="1sf-nj-Rnz"/>
-                                            <constraint firstItem="Fc6-Wb-bXM" firstAttribute="leading" secondItem="JPY-oC-xiy" secondAttribute="leading" id="70A-vw-aua"/>
                                             <constraint firstAttribute="trailing" secondItem="JPY-oC-xiy" secondAttribute="trailing" id="8Vn-2J-7ca"/>
-                                            <constraint firstItem="Fc6-Wb-bXM" firstAttribute="leading" secondItem="qu1-Xv-hbc" secondAttribute="leading" id="UGU-Xt-35l"/>
-                                            <constraint firstAttribute="height" constant="800" id="ZEv-wS-5ci"/>
-                                            <constraint firstItem="JPY-oC-xiy" firstAttribute="top" secondItem="Fc6-Wb-bXM" secondAttribute="bottom" constant="15" id="hu8-ZU-3TH"/>
+                                            <constraint firstItem="JPY-oC-xiy" firstAttribute="top" secondItem="qu1-Xv-hbc" secondAttribute="top" id="J5v-tn-tIa"/>
+                                            <constraint firstAttribute="height" constant="600" id="ZEv-wS-5ci"/>
+                                            <constraint firstItem="JPY-oC-xiy" firstAttribute="leading" secondItem="qu1-Xv-hbc" secondAttribute="leading" id="bPc-yk-d8x"/>
                                         </constraints>
                                     </view>
                                 </subviews>
@@ -140,17 +136,17 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Pej-Ev-GzA">
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Pej-Ev-GzA">
                                 <rect key="frame" x="16" y="0.0" width="568" height="556"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="S5z-3e-zpm">
-                                        <rect key="frame" x="0.0" y="0.0" width="568" height="800"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="568" height="1100"/>
                                         <subviews>
-                                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="PGG-8c-9aG" userLabel="Item Collection View">
-                                                <rect key="frame" x="0.0" y="0.0" width="568" height="800"/>
+                                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="PGG-8c-9aG" userLabel="Item Collection View">
+                                                <rect key="frame" x="0.0" y="0.0" width="568" height="1100"/>
                                                 <color key="backgroundColor" name="controlHighlightColor" catalog="System" colorSpace="catalog"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="height" constant="800" id="TFU-JL-yhg"/>
+                                                    <constraint firstAttribute="height" constant="1100" id="TFU-JL-yhg"/>
                                                 </constraints>
                                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="1" minimumInteritemSpacing="0.0" id="z9k-IJ-DLg">
                                                     <size key="itemSize" width="330" height="49"/>
@@ -168,7 +164,7 @@
                                                             <subviews>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NlQ-VG-6ds">
                                                                     <rect key="frame" x="68" y="15" width="42" height="21"/>
-                                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                                    <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
                                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
@@ -195,7 +191,7 @@
                                                         </connections>
                                                     </collectionViewCell>
                                                 </cells>
-                                                <collectionReusableView key="sectionHeaderView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="zEd-xA-GRD">
+                                                <collectionReusableView key="sectionHeaderView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" restorationIdentifier="Header" reuseIdentifier="Header" id="zEd-xA-GRD">
                                                     <rect key="frame" x="0.0" y="0.0" width="568" height="50"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                 </collectionReusableView>
@@ -208,7 +204,7 @@
                                         <color key="backgroundColor" name="controlHighlightColor" catalog="System" colorSpace="catalog"/>
                                         <constraints>
                                             <constraint firstItem="PGG-8c-9aG" firstAttribute="leading" secondItem="S5z-3e-zpm" secondAttribute="leading" id="2Rr-5r-tcW"/>
-                                            <constraint firstAttribute="height" constant="800" id="42t-cT-ihP"/>
+                                            <constraint firstAttribute="height" constant="1100" id="42t-cT-ihP"/>
                                             <constraint firstItem="PGG-8c-9aG" firstAttribute="top" secondItem="S5z-3e-zpm" secondAttribute="top" id="KvE-Wd-W97"/>
                                             <constraint firstAttribute="trailing" secondItem="PGG-8c-9aG" secondAttribute="trailing" id="y7U-lc-6Uk"/>
                                         </constraints>

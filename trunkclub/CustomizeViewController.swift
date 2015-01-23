@@ -17,7 +17,11 @@ class CustomizeViewController: UIViewController, UICollectionViewDelegateFlowLay
 
     @IBOutlet weak var customizeCollectionView: UICollectionView!
     
-    var arrayOfStyles: [Items] = [Items]()
+    var sectionNames : [String] = ["STYLES", "COLORS"]
+    var sectionData = Array<Array<Items>>()
+
+    var arrayOfStyles = [Items]()
+    var arrayOfColors = [Items]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -32,6 +36,10 @@ class CustomizeViewController: UIViewController, UICollectionViewDelegateFlowLay
         navigationItem.title = "Customize"
         
         self.setUpStyles()
+        self.setUpColors()
+        
+        sectionData.append(arrayOfStyles)
+        sectionData.append(arrayOfColors)
         
         self.customizeCollectionView.allowsMultipleSelection = false
         // Do any additional setup after loading the view.
@@ -51,27 +59,79 @@ class CustomizeViewController: UIViewController, UICollectionViewDelegateFlowLay
         
     }
     
+    func setUpColors() {
+        //create array of shirt types and images
+        var black = Items(image: "tshirt-icon.png", type: "Black")
+        var white = Items(image: "tshirt-icon.png", type: "White")
+        var gray = Items(image: "tshirt-icon.png", type: "Gray")
+        var red = Items(image: "tshirt-icon.png", type: "Red")
+        var blue = Items(image: "tshirt-icon.png", type: "Blue")
+        var green = Items(image: "tshirt-icon.png", type: "Green")
+        
+        arrayOfColors.append(black)
+        arrayOfColors.append(white)
+        arrayOfColors.append(gray)
+        arrayOfColors.append(red)
+        arrayOfColors.append(blue)
+        arrayOfColors.append(green)
+        
+    }
+    
     func numberOfSectionsInCollectionView(collectionView: UICollectionView) -> Int {
-        return 1
+        return sectionNames.count
     }
     
     //return number of items
     func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        println(arrayOfStyles.count)
-        return arrayOfStyles.count
+        return sectionData[section].count
+    }
+    
+    //set headers
+    func collectionView(collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, atIndexPath indexPath: NSIndexPath) -> UICollectionReusableView {
+        
+        var header : UICollectionReusableView! = nil
+        
+        if kind == UICollectionElementKindSectionHeader {
+            header = collectionView.dequeueReusableSupplementaryViewOfKind(UICollectionElementKindSectionHeader, withReuseIdentifier:"CustomizeHeader", forIndexPath:indexPath) as UICollectionReusableView
+            
+            if header.subviews.count == 0 {
+                let headerLabel = UILabel()
+                header.addSubview(headerLabel)
+                
+                //set design for label
+                headerLabel.textAlignment = .Left
+                headerLabel.textColor = UIColor.darkGrayColor()
+                headerLabel.font = UIFont(name:"Helvetica Neue-Bold", size:20)
+                headerLabel.layer.masksToBounds = true // has to be added for iOS 8 label
+                headerLabel.setTranslatesAutoresizingMaskIntoConstraints(false)
+                header.addConstraints(
+                    NSLayoutConstraint.constraintsWithVisualFormat("H:|-10-[lab(125)]",
+                        options:nil, metrics:nil, views:["lab":headerLabel]))
+                header.addConstraints(
+                    NSLayoutConstraint.constraintsWithVisualFormat("V:[lab(30)]-5-|",
+                        options:nil, metrics:nil, views:["lab":headerLabel]))
+                
+            }
+            
+            let headerLabel = header.subviews[0] as UILabel
+            headerLabel.text = sectionNames[indexPath.section]
+        }
+        
+        return header
     }
     
     //set cells
     func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
         
-        let customizeCell: CustomCollectionViewCell = collectionView.dequeueReusableCellWithReuseIdentifier("CustomizeCell", forIndexPath: indexPath) as CustomCollectionViewCell
+        let cell: CustomCollectionViewCell = collectionView.dequeueReusableCellWithReuseIdentifier("CustomizeCell", forIndexPath: indexPath) as CustomCollectionViewCell
         
-        let customize = arrayOfStyles[indexPath.row]
-        customizeCell.setCustomizeCell(customize.type, customizeImageName: customize.image)
+        let customize = sectionData[indexPath.section][indexPath.row]
+        cell.setCustomizeCell(customize.type, customizeImageName: customize.image)
         
-        customizeCell.backgroundColor = UIColor.whiteColor()
+        cell.backgroundColor = UIColor.whiteColor()
         
-        return customizeCell
+        return cell
     }
+
 
 }

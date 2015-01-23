@@ -19,11 +19,14 @@ class WantsViewController: UIViewController, UICollectionViewDelegateFlowLayout,
     
     var selected = -1
 
-    var sectionNames : [String] = ["SHIRTS", "PANTS"]
+    var sectionNames : [String] = ["SHIRTS", "PANTS", "SHOES", "ACCESSORIES", "MORE"]
     var sectionData = Array<Array<Items>>()
     
     var arrayOfShirts = [Items]()
     var arrayOfPants = [Items]()
+    var arrayOfShoes = [Items]()
+    var arrayOfAccessories = [Items]()
+    var arrayOfMore = [Items]()
     
     
     override func viewDidLoad() {
@@ -40,10 +43,16 @@ class WantsViewController: UIViewController, UICollectionViewDelegateFlowLayout,
 
         self.setUpShirts()
         self.setUpPants()
+        self.setUpShoes()
+        self.setUpAccessories()
+        self.setUpMore()
         
         //set up data array
         sectionData.append(arrayOfShirts)
         sectionData.append(arrayOfPants)
+        sectionData.append(arrayOfShoes)
+        sectionData.append(arrayOfAccessories)
+        sectionData.append(arrayOfMore)
         println(sectionData)
         
         self.itemCollectionView.allowsMultipleSelection = false
@@ -78,6 +87,40 @@ class WantsViewController: UIViewController, UICollectionViewDelegateFlowLayout,
         
     }
     
+    func setUpShoes() {
+        var casual = Items(image: "tshirt-icon.png", type: "Casual Shoes")
+        var dress = Items(image: "tshirt-icon.png", type: "Dress Shoes")
+        
+        arrayOfShoes.append(casual)
+        arrayOfShoes.append(dress)
+        
+    }
+    
+    func setUpAccessories() {
+        var ties = Items(image: "tshirt-icon.png", type: "Ties")
+        var belts = Items(image: "tshirt-icon.png", type: "Belts")
+        var bags = Items(image: "tshirt-icon.png", type: "Bags")
+        
+        
+        arrayOfAccessories.append(ties)
+        arrayOfAccessories.append(belts)
+        arrayOfAccessories.append(bags)
+        
+    }
+    
+    func setUpMore() {
+        var shorts = Items(image: "tshirt-icon.png", type: "Shorts")
+        var blazers = Items(image: "tshirt-icon.png", type: "Blazers")
+        var sweaters = Items(image: "tshirt-icon.png", type: "Sweaters")
+        var outerwear = Items(image: "tshirt-icon.png", type: "Outerwear")
+        
+        
+        arrayOfMore.append(shorts)
+        arrayOfMore.append(blazers)
+        arrayOfMore.append(sweaters)
+        arrayOfMore.append(outerwear)
+        
+    }
     
     func numberOfSectionsInCollectionView(collectionView: UICollectionView) -> Int {
         return sectionNames.count
@@ -86,6 +129,40 @@ class WantsViewController: UIViewController, UICollectionViewDelegateFlowLayout,
     //return number of items in each section
     func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return sectionData[section].count
+    }
+    
+    //set headers
+    func collectionView(collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, atIndexPath indexPath: NSIndexPath) -> UICollectionReusableView {
+        
+        var header : UICollectionReusableView! = nil
+        
+        if kind == UICollectionElementKindSectionHeader {
+            header = collectionView.dequeueReusableSupplementaryViewOfKind(UICollectionElementKindSectionHeader, withReuseIdentifier:"Header", forIndexPath:indexPath) as UICollectionReusableView
+            
+            if header.subviews.count == 0 {
+                    let headerLabel = UILabel()
+                    header.addSubview(headerLabel)
+                
+                    //set design for label
+                    headerLabel.textAlignment = .Left
+                    headerLabel.textColor = UIColor.darkGrayColor()
+                    headerLabel.font = UIFont(name:"Helvetica Neue-Bold", size:20)
+                    headerLabel.layer.masksToBounds = true // has to be added for iOS 8 label
+                    headerLabel.setTranslatesAutoresizingMaskIntoConstraints(false)
+                header.addConstraints(
+                    NSLayoutConstraint.constraintsWithVisualFormat("H:|-10-[lab(125)]",
+                        options:nil, metrics:nil, views:["lab":headerLabel]))
+                header.addConstraints(
+                    NSLayoutConstraint.constraintsWithVisualFormat("V:[lab(30)]-5-|",
+                        options:nil, metrics:nil, views:["lab":headerLabel]))
+
+            }
+            
+                let headerLabel = header.subviews[0] as UILabel
+                headerLabel.text = sectionNames[indexPath.section]
+        }
+        
+        return header
     }
     
     //set cells
@@ -101,6 +178,7 @@ class WantsViewController: UIViewController, UICollectionViewDelegateFlowLayout,
         return cell
     }
     
+    //selection info
     func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
         
         var itemCell = self.itemCollectionView.dequeueReusableCellWithReuseIdentifier("ItemCell", forIndexPath: indexPath) as CustomCollectionViewCell
