@@ -340,6 +340,22 @@ class CustomizeViewController: UIViewController, UICollectionViewDelegateFlowLay
         return cell
     }
     
-
+     func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
+        var selectedCell = customizeCollectionView.cellForItemAtIndexPath(indexPath) as CustomCollectionViewCell
+        
+        if (selectedCell.selected) {
+            selectedCell.backgroundColor = UIColor.grayColor()
+        }
+        else {
+            selectedCell.backgroundColor = UIColor.whiteColor()
+        }
+    }
+    
+    func collectionView(collectionView: UICollectionView, didDeselectItemAtIndexPath indexPath: NSIndexPath) {
+        var deselectedCell = customizeCollectionView.cellForItemAtIndexPath(indexPath) as CustomCollectionViewCell
+        
+        deselectedCell.backgroundColor = UIColor.whiteColor()
+       
+    }
 
 }
