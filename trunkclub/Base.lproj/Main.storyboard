@@ -21,13 +21,13 @@
                                 <rect key="frame" x="16" y="0.0" width="568" height="556"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qu1-Xv-hbc">
-                                        <rect key="frame" x="0.0" y="0.0" width="568" height="600"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="568" height="800"/>
                                         <subviews>
                                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="JPY-oC-xiy" userLabel="Customize Collection View">
-                                                <rect key="frame" x="0.0" y="0.0" width="568" height="600"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="568" height="800"/>
                                                 <color key="backgroundColor" name="controlHighlightColor" catalog="System" colorSpace="catalog"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="height" constant="600" id="WZm-y8-7Qb"/>
+                                                    <constraint firstAttribute="height" constant="800" id="WZm-y8-7Qb"/>
                                                 </constraints>
                                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="1" minimumInteritemSpacing="0.0" id="PZe-bm-bap">
                                                     <size key="itemSize" width="330" height="49"/>
@@ -85,7 +85,7 @@
                                         <constraints>
                                             <constraint firstAttribute="trailing" secondItem="JPY-oC-xiy" secondAttribute="trailing" id="8Vn-2J-7ca"/>
                                             <constraint firstItem="JPY-oC-xiy" firstAttribute="top" secondItem="qu1-Xv-hbc" secondAttribute="top" id="J5v-tn-tIa"/>
-                                            <constraint firstAttribute="height" constant="600" id="ZEv-wS-5ci"/>
+                                            <constraint firstAttribute="height" constant="800" id="ZEv-wS-5ci"/>
                                             <constraint firstItem="JPY-oC-xiy" firstAttribute="leading" secondItem="qu1-Xv-hbc" secondAttribute="leading" id="bPc-yk-d8x"/>
                                         </constraints>
                                     </view>
