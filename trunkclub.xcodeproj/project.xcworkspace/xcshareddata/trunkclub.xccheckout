@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>C5780AA4-6EBB-40CA-9C3D-DB47E7C0A74D</string>
+	<key>IDESourceControlProjectName</key>
+	<string>trunkclub</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>1FBB6F18C4A49F6AC48D278881054675A2E98E43</key>
+		<string>https://github.com/amyschmidt/interview-code.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>trunkclub.xcodeproj</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>1FBB6F18C4A49F6AC48D278881054675A2E98E43</key>
+		<string>../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/amyschmidt/interview-code.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>111</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>1FBB6F18C4A49F6AC48D278881054675A2E98E43</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>1FBB6F18C4A49F6AC48D278881054675A2E98E43</string>
+			<key>IDESourceControlWCCName</key>
+			<string>trunkclub</string>
+		</dict>
+	</array>
+</dict>
+</plist>
