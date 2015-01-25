@@ -17,10 +17,11 @@ class WantsViewController: UIViewController, UICollectionViewDelegateFlowLayout,
  
     @IBOutlet weak var itemCollectionView: UICollectionView!
     
-    var selected = -1
-
     var sectionNames : [String] = ["SHIRTS", "PANTS", "SHOES", "ACCESSORIES", "MORE"]
     var sectionData = Array<Array<Items>>()
+    
+    var selectedSection : Int!
+    var selectedItem : Int!
     
     var arrayOfShirts = [Items]()
     var arrayOfPants = [Items]()
@@ -179,21 +180,32 @@ class WantsViewController: UIViewController, UICollectionViewDelegateFlowLayout,
     }
     
     //selection info
-    /*func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
+    func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
         
         var itemCell = self.itemCollectionView.dequeueReusableCellWithReuseIdentifier("ItemCell", forIndexPath: indexPath) as CustomCollectionViewCell
         itemCell.selected = true
         
-        if(selected != -1){
-            var previous = self.itemCollectionView.dequeueReusableCellWithReuseIdentifier("ItemCell", forIndexPath: NSIndexPath(forRow: selected, inSection: 0)) as CustomCollectionViewCell
-            previous.selected = false
-        }
-        selected = indexPath.row
-        itemCollectionView.reloadData()
+        selectedSection = indexPath.section
+        selectedItem = indexPath.row
+        println("Collection View: Section Selected: \(selectedSection) Item Selected: \(selectedItem)")
         
-        println(itemCell.selected)
-        println(selected)
         
-    }*/
+    }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        
+        var customizeVC: CustomizeViewController = segue.destinationViewController as CustomizeViewController
+        
+        let cell = sender as CustomCollectionViewCell
+        let path = self.itemCollectionView.indexPathForCell(cell)
+        
+        selectedSection = path?.section
+        selectedItem = path?.row
+        
+        println("Prepare for Segue: Section Selected: \(selectedSection) Item Selected: \(selectedItem)")
+        
+        customizeVC.section = selectedSection
+        customizeVC.item = selectedItem
+    }
 
 }
