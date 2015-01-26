@@ -15,6 +15,7 @@ class WantsViewController: UIViewController, UICollectionViewDelegateFlowLayout,
     }
     
  
+    @IBOutlet weak var wantsView: UIView!
     @IBOutlet weak var itemCollectionView: UICollectionView!
     
     var sectionNames : [String] = ["SHIRTS", "PANTS", "SHOES", "ACCESSORIES", "MORE"]
@@ -42,6 +43,9 @@ class WantsViewController: UIViewController, UICollectionViewDelegateFlowLayout,
         navBar?.tintColor = UIColor.whiteColor()
         navigationItem.title = "Build Your Own"
 
+        
+        //wantsView.frame.height = itemCollectionView.intrinsicContentSize()
+        
         self.setUpShirts()
         self.setUpPants()
         self.setUpShoes()
@@ -65,8 +69,8 @@ class WantsViewController: UIViewController, UICollectionViewDelegateFlowLayout,
         //create array of shirt types and images
         var tshirt = Items(image: "tshirt-icon.png", type: "T-Shirts")
         var polo = Items(image: "tshirt-icon.png", type: "Polos")
-        var casual = Items(image: "tshirt-icon.png", type: "Casual Shirts")
-        var dress = Items(image: "tshirt-icon.png", type: "Dress Shirts")
+        var casual = Items(image: "casual-shirt-icon.png", type: "Casual Shirts")
+        var dress = Items(image: "dress-shirt-icon.png", type: "Dress Shirts")
 
         arrayOfShirts.append(tshirt)
         arrayOfShirts.append(polo)
@@ -77,9 +81,9 @@ class WantsViewController: UIViewController, UICollectionViewDelegateFlowLayout,
     
     
     func setUpPants() {
-        var jeans = Items(image: "tshirt-icon.png", type: "Jeans")
-        var chinos = Items(image: "tshirt-icon.png", type: "Chinos")
-        var dress = Items(image: "tshirt-icon.png", type: "Dress Pants")
+        var jeans = Items(image: "pants-icon.png", type: "Jeans")
+        var chinos = Items(image: "pants-icon.png", type: "Chinos")
+        var dress = Items(image: "dress-pants-icon.png", type: "Dress Pants")
         
         
         arrayOfPants.append(jeans)
@@ -89,8 +93,8 @@ class WantsViewController: UIViewController, UICollectionViewDelegateFlowLayout,
     }
     
     func setUpShoes() {
-        var casual = Items(image: "tshirt-icon.png", type: "Casual Shoes")
-        var dress = Items(image: "tshirt-icon.png", type: "Dress Shoes")
+        var casual = Items(image: "casual-shoes-icon.png", type: "Casual Shoes")
+        var dress = Items(image: "shoes-icon.png", type: "Dress Shoes")
         
         arrayOfShoes.append(casual)
         arrayOfShoes.append(dress)
@@ -98,9 +102,9 @@ class WantsViewController: UIViewController, UICollectionViewDelegateFlowLayout,
     }
     
     func setUpAccessories() {
-        var ties = Items(image: "tshirt-icon.png", type: "Ties")
-        var belts = Items(image: "tshirt-icon.png", type: "Belts")
-        var bags = Items(image: "tshirt-icon.png", type: "Bags")
+        var ties = Items(image: "accessories-icon.png", type: "Ties")
+        var belts = Items(image: "accessories-icon.png", type: "Belts")
+        var bags = Items(image: "accessories-icon.png", type: "Bags")
         
         
         arrayOfAccessories.append(ties)
@@ -110,10 +114,10 @@ class WantsViewController: UIViewController, UICollectionViewDelegateFlowLayout,
     }
     
     func setUpMore() {
-        var shorts = Items(image: "tshirt-icon.png", type: "Shorts")
-        var blazers = Items(image: "tshirt-icon.png", type: "Blazers")
-        var sweaters = Items(image: "tshirt-icon.png", type: "Sweaters")
-        var outerwear = Items(image: "tshirt-icon.png", type: "Outerwear")
+        var shorts = Items(image: "shorts-icon.png", type: "Shorts")
+        var blazers = Items(image: "blazer-icon.png", type: "Blazers")
+        var sweaters = Items(image: "sweaters-icon.png", type: "Sweaters")
+        var outerwear = Items(image: "outerwear-icon.png", type: "Outerwear")
         
         
         arrayOfMore.append(shorts)

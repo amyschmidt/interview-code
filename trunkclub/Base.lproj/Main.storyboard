@@ -237,6 +237,7 @@
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="itemCollectionView" destination="PGG-8c-9aG" id="pOp-8k-W0t"/>
+                        <outlet property="wantsView" destination="S5z-3e-zpm" id="n4u-D6-8Jr"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ut2-Td-6Ar" userLabel="First Responder" sceneMemberID="firstResponder"/>

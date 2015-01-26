@@ -64,6 +64,18 @@ class CustomizeViewController: UIViewController, UICollectionViewDelegateFlowLay
                     arrayOfStyles.append(tank)
                     arrayOfStyles.append(vneck)
                     arrayOfStyles.append(crew)
+                case 2:
+                    var basic = Items(image: "casual-shirt-icon.png", type: "Basic")
+                    var printed = Items(image: "casual-shirt-icon.png", type: "Printed")
+                    
+                    arrayOfStyles.append(basic)
+                    arrayOfStyles.append(printed)
+                case 3:
+                    var basic = Items(image: "dress-shirt-icon.png", type: "Basic")
+                    var printed = Items(image: "dress-shirt-icon.png", type: "Printed")
+                    
+                    arrayOfStyles.append(basic)
+                    arrayOfStyles.append(printed)
                 default:
                     var basic = Items(image: "tshirt-icon.png", type: "Basic")
                     var printed = Items(image: "tshirt-icon.png", type: "Printed")
@@ -75,17 +87,17 @@ class CustomizeViewController: UIViewController, UICollectionViewDelegateFlowLay
         case 1:
             switch item {
             case 2:
-                var pleated = Items(image: "tshirt-icon.png", type: "Pleated")
-                var flat = Items(image: "tshirt-icon.png", type: "Flat-Front")
+                var pleated = Items(image: "dress-pants-icon.png", type: "Pleated")
+                var flat = Items(image: "dress-pants-icon.png", type: "Flat-Front")
                 
                 arrayOfStyles.append(pleated)
                 arrayOfStyles.append(flat)
             default:
-                var bootcut = Items(image: "tshirt-icon.png", type: "Bootcut")
-                var relaxed = Items(image: "tshirt-icon.png", type: "Relaxed")
-                var skinny = Items(image: "tshirt-icon.png", type: "Skinny")
-                var slim = Items(image: "tshirt-icon.png", type: "Slim Fit")
-                var straight = Items(image: "tshirt-icon.png", type: "Straight Cut")
+                var bootcut = Items(image: "pants-icon.png", type: "Bootcut")
+                var relaxed = Items(image: "pants-icon.png", type: "Relaxed")
+                var skinny = Items(image: "pants-icon.png", type: "Skinny")
+                var slim = Items(image: "pants-icon.png", type: "Slim Fit")
+                var straight = Items(image: "pants-icon.png", type: "Straight Cut")
                 
                 arrayOfStyles.append(bootcut)
                 arrayOfStyles.append(relaxed)
@@ -96,24 +108,16 @@ class CustomizeViewController: UIViewController, UICollectionViewDelegateFlowLay
             }
         case 2:
             switch item {
-            case 0:
-                var sneakers = Items(image: "tshirt-icon.png", type: "Sneakers")
-                var boat = Items(image: "tshirt-icon.png", type: "Boat Shoes")
-                var sandals = Items(image: "tshirt-icon.png", type: "Sandals")
-                
-                arrayOfStyles.append(sneakers)
-                arrayOfStyles.append(boat)
-                arrayOfStyles.append(sandals)
             case 1:
-                var boots = Items(image: "tshirt-icon.png", type: "Boots")
-                var formal = Items(image: "tshirt-icon.png", type: "Formal")
+                var boots = Items(image: "shoes-icon.png", type: "Boots")
+                var formal = Items(image: "shoes-icon.png", type: "Formal")
                 
                 arrayOfStyles.append(boots)
                 arrayOfStyles.append(formal)
             default:
-                var sneakers = Items(image: "tshirt-icon.png", type: "Sneakers")
-                var boat = Items(image: "tshirt-icon.png", type: "Boat Shoes")
-                var sandals = Items(image: "tshirt-icon.png", type: "Sandals")
+                var sneakers = Items(image: "casual-shoes-icon.png", type: "Sneakers")
+                var boat = Items(image: "casual-shoes-icon.png", type: "Boat Shoes")
+                var sandals = Items(image: "casual-shoes-icon.png", type: "Sandals")
                 
                 arrayOfStyles.append(sneakers)
                 arrayOfStyles.append(boat)
@@ -122,26 +126,26 @@ class CustomizeViewController: UIViewController, UICollectionViewDelegateFlowLay
         case 3:
             switch item {
             case 0:
-                var basic = Items(image: "tshirt-icon.png", type: "Basic")
-                var narrow = Items(image: "tshirt-icon.png", type: "Narrow")
-                var printed = Items(image: "tshirt-icon.png", type: "Printed")
+                var basic = Items(image: "accessories-icon.png", type: "Basic")
+                var narrow = Items(image: "accessories-icon.png", type: "Narrow")
+                var printed = Items(image: "accessories-icon.png", type: "Printed")
                 
                 arrayOfStyles.append(basic)
                 arrayOfStyles.append(narrow)
                 arrayOfStyles.append(printed)
             case 2:
-                var brief = Items(image: "tshirt-icon.png", type: "Briefcase")
-                var cross = Items(image: "tshirt-icon.png", type: "Cross-Body")
-                var duffle = Items(image: "tshirt-icon.png", type: "Duffle")
-                var tote = Items(image: "tshirt-icon.png", type: "Tote")
+                var brief = Items(image: "accessories-icon.png", type: "Briefcase")
+                var cross = Items(image: "accessories-icon.png", type: "Cross-Body")
+                var duffle = Items(image: "accessories-icon.png", type: "Duffle")
+                var tote = Items(image: "accessories-icon.png", type: "Tote")
                 
                 arrayOfStyles.append(brief)
                 arrayOfStyles.append(cross)
                 arrayOfStyles.append(duffle)
                 arrayOfStyles.append(tote)
             default:
-                var basic = Items(image: "tshirt-icon.png", type: "Basic")
-                var printed = Items(image: "tshirt-icon.png", type: "Printed")
+                var basic = Items(image: "accessories-icon.png", type: "Basic")
+                var printed = Items(image: "accessories-icon.png", type: "Printed")
                 
                 arrayOfStyles.append(basic)
                 arrayOfStyles.append(printed)
@@ -149,28 +153,28 @@ class CustomizeViewController: UIViewController, UICollectionViewDelegateFlowLay
         case 4:
             switch item {
             case 0:
-                var basic = Items(image: "tshirt-icon.png", type: "Basic")
-                var chino = Items(image: "tshirt-icon.png", type: "Chino")
-                var plaid = Items(image: "tshirt-icon.png", type: "Plaid")
+                var basic = Items(image: "shorts-icon.png", type: "Basic")
+                var chino = Items(image: "shorts-icon.png", type: "Chino")
+                var plaid = Items(image: "shorts-icon.png", type: "Plaid")
                 
                 arrayOfStyles.append(basic)
                 arrayOfStyles.append(chino)
                 arrayOfStyles.append(plaid)
             case 1:
-                var single = Items(image: "tshirt-icon.png", type: "Single-Breasted")
-                var double = Items(image: "tshirt-icon.png", type: "Double-Breasted")
+                var single = Items(image: "blazer-icon.png", type: "Single-Breasted")
+                var double = Items(image: "blazer-icon.png", type: "Double-Breasted")
                 
                 arrayOfStyles.append(single)
                 arrayOfStyles.append(double)
             case 2:
-                var cardigan = Items(image: "tshirt-icon.png", type: "Cardigan")
-                var crew = Items(image: "tshirt-icon.png", type: "Crew Neck")
-                var vneck = Items(image: "tshirt-icon.png", type: "V-Neck")
-                var pattern = Items(image: "tshirt-icon.png", type: "Patterned")
-                var collar = Items(image: "tshirt-icon.png", type: "Collared")
-                var cable = Items(image: "tshirt-icon.png", type: "Cable Knit")
-                var halfzip = Items(image: "tshirt-icon.png", type: "Half Zip/Pullover")
-                var vest = Items(image: "tshirt-icon.png", type: "Sweater Vest")
+                var cardigan = Items(image: "sweaters-icon.png", type: "Cardigan")
+                var crew = Items(image: "sweaters-icon.png", type: "Crew Neck")
+                var vneck = Items(image: "sweaters-icon.png", type: "V-Neck")
+                var pattern = Items(image: "sweaters-icon.png", type: "Patterned")
+                var collar = Items(image: "sweaters-icon.png", type: "Collared")
+                var cable = Items(image: "sweaters-icon.png", type: "Cable Knit")
+                var halfzip = Items(image: "sweaters-icon.png", type: "Half Zip/Pullover")
+                var vest = Items(image: "sweaters-icon.png", type: "Sweater Vest")
 
                 arrayOfStyles.append(cardigan)
                 arrayOfStyles.append(crew)
@@ -181,11 +185,11 @@ class CustomizeViewController: UIViewController, UICollectionViewDelegateFlowLay
                 arrayOfStyles.append(halfzip)
                 arrayOfStyles.append(vest)
             case 3:
-                var trench = Items(image: "tshirt-icon.png", type: "Trench")
-                var peacoat = Items(image: "tshirt-icon.png", type: "Pea Coat")
-                var leather = Items(image: "tshirt-icon.png", type: "Leather")
-                var bomber = Items(image: "tshirt-icon.png", type: "Bomber")
-                var vest = Items(image: "tshirt-icon.png", type: "Vest")
+                var trench = Items(image: "outerwear-icon.png", type: "Trench")
+                var peacoat = Items(image: "outerwear-icon.png", type: "Pea Coat")
+                var leather = Items(image: "outerwear-icon.png", type: "Leather")
+                var bomber = Items(image: "outerwear-icon.png", type: "Bomber")
+                var vest = Items(image: "outerwear-icon.png", type: "Vest")
                 
                 arrayOfStyles.append(trench)
                 arrayOfStyles.append(peacoat)
@@ -193,8 +197,8 @@ class CustomizeViewController: UIViewController, UICollectionViewDelegateFlowLay
                 arrayOfStyles.append(bomber)
                 arrayOfStyles.append(vest)
             default:
-                var basic = Items(image: "tshirt-icon.png", type: "Basic")
-                var printed = Items(image: "tshirt-icon.png", type: "Printed")
+                var basic = Items(image: "outerwear-icon.png", type: "Basic")
+                var printed = Items(image: "outerwear-icon.png", type: "Printed")
                 
                 arrayOfStyles.append(basic)
                 arrayOfStyles.append(printed)
@@ -216,6 +220,43 @@ class CustomizeViewController: UIViewController, UICollectionViewDelegateFlowLay
         switch section {
         case 0:
             switch item {
+            case 2:
+                var black = Items(image: "casual-shirt-icon.png", type: "Black")
+                var white = Items(image: "casual-shirt-icon.png", type: "White")
+                var gray = Items(image: "casual-shirt-icon.png", type: "Gray")
+                var brown = Items(image: "casual-shirt-icon.png", type: "Brown")
+                var navy = Items(image: "casual-shirt-icon.png", type: "Navy")
+                var red = Items(image: "casual-shirt-icon.png", type: "Red")
+                var blue = Items(image: "casual-shirt-icon.png", type: "Blue")
+                var green = Items(image: "casual-shirt-icon.png", type: "Green")
+                
+                arrayOfColors.append(black)
+                arrayOfColors.append(white)
+                arrayOfColors.append(gray)
+                arrayOfColors.append(brown)
+                arrayOfColors.append(navy)
+                arrayOfColors.append(red)
+                arrayOfColors.append(blue)
+                arrayOfColors.append(green)
+            case 3:
+                var black = Items(image: "dress-shirt-icon.png", type: "Black")
+                var white = Items(image: "dress-shirt-icon.png", type: "White")
+                var gray = Items(image: "dress-shirt-icon.png", type: "Gray")
+                var brown = Items(image: "dress-shirt-icon.png", type: "Brown")
+                var navy = Items(image: "dress-shirt-icon.png", type: "Navy")
+                var red = Items(image: "dress-shirt-icon.png", type: "Red")
+                var blue = Items(image: "dress-shirt-icon.png", type: "Blue")
+                var green = Items(image: "dress-shirt-icon.png", type: "Green")
+                
+                arrayOfColors.append(black)
+                arrayOfColors.append(white)
+                arrayOfColors.append(gray)
+                arrayOfColors.append(brown)
+                arrayOfColors.append(navy)
+                arrayOfColors.append(red)
+                arrayOfColors.append(blue)
+                arrayOfColors.append(green)
+
             default:
                 var black = Items(image: "tshirt-icon.png", type: "Black")
                 var white = Items(image: "tshirt-icon.png", type: "White")
@@ -238,20 +279,20 @@ class CustomizeViewController: UIViewController, UICollectionViewDelegateFlowLay
         case 1:
             switch item {
             case 0:
-                var original = Items(image: "tshirt-icon.png", type: "Original Blue")
-                var dark = Items(image: "tshirt-icon.png", type: "Dark Wash")
-                var light = Items(image: "tshirt-icon.png", type: "Light Wash")
+                var original = Items(image: "pants-icon.png", type: "Original Blue")
+                var dark = Items(image: "pants-icon.png", type: "Dark Wash")
+                var light = Items(image: "pants-icon.png", type: "Light Wash")
                 
                 arrayOfColors.append(original)
                 arrayOfColors.append(dark)
                 arrayOfColors.append(light)
             case 1:
-                var black = Items(image: "tshirt-icon.png", type: "Black")
-                var white = Items(image: "tshirt-icon.png", type: "White")
-                var gray = Items(image: "tshirt-icon.png", type: "Gray")
-                var brown = Items(image: "tshirt-icon.png", type: "Brown")
-                var pastel = Items(image: "tshirt-icon.png", type: "Pastel Colors")
-                var bright = Items(image: "tshirt-icon.png", type: "Bright Colors")
+                var black = Items(image: "pants-icon.png", type: "Black")
+                var white = Items(image: "pants-icon.png", type: "White")
+                var gray = Items(image: "pants-icon.png", type: "Gray")
+                var brown = Items(image: "pants-icon.png", type: "Brown")
+                var pastel = Items(image: "pants-icon.png", type: "Pastel Colors")
+                var bright = Items(image: "pants-icon.png", type: "Bright Colors")
                 
                 arrayOfColors.append(black)
                 arrayOfColors.append(white)
@@ -260,20 +301,102 @@ class CustomizeViewController: UIViewController, UICollectionViewDelegateFlowLay
                 arrayOfColors.append(pastel)
                 arrayOfColors.append(bright)
             default:
-                var black = Items(image: "tshirt-icon.png", type: "Black")
-                var navy = Items(image: "tshirt-icon.png", type: "Navy")
-                var gray = Items(image: "tshirt-icon.png", type: "Gray")
+                var black = Items(image: "dress-pants-icon.png", type: "Black")
+                var navy = Items(image: "dress-pants-icon.png", type: "Navy")
+                var gray = Items(image: "dress-pants-icon.png", type: "Gray")
                 
                 arrayOfColors.append(black)
                 arrayOfColors.append(navy)
                 arrayOfColors.append(gray)
             }
+        case 2:
+            switch item {
+            case 0:
+                var black = Items(image: "casual-shoes-icon.png", type: "Black")
+                var white = Items(image: "casual-shoes-icon.png", type: "White")
+                var gray = Items(image: "casual-shoes-icon.png", type: "Gray")
+                var brown = Items(image: "casual-shoes-icon.png", type: "Brown")
+                var navy = Items(image: "casual-shoes-icon.png", type: "Navy")
+                
+                arrayOfColors.append(black)
+                arrayOfColors.append(white)
+                arrayOfColors.append(gray)
+                arrayOfColors.append(brown)
+                arrayOfColors.append(navy)
+            default:
+                var black = Items(image: "shoes-icon.png", type: "Black")
+                var white = Items(image: "shoes-icon.png", type: "White")
+                var gray = Items(image: "shoes-icon.png", type: "Gray")
+                var brown = Items(image: "shoes-icon.png", type: "Brown")
+                var navy = Items(image: "shoes-icon.png", type: "Navy")
+                
+                arrayOfColors.append(black)
+                arrayOfColors.append(white)
+                arrayOfColors.append(gray)
+                arrayOfColors.append(brown)
+                arrayOfColors.append(navy)
+            }
+        case 4:
+            switch item {
+            case 0:
+                var black = Items(image: "shorts-icon.png", type: "Black")
+                var white = Items(image: "shorts-icon.png", type: "White")
+                var gray = Items(image: "shorts-icon.png", type: "Gray")
+                var brown = Items(image: "shorts-icon.png", type: "Brown")
+                var pastel = Items(image: "shorts-icon.png", type: "Pastel Colors")
+                var bright = Items(image: "shorts-icon.png", type: "Bright Colors")
+                
+                arrayOfColors.append(black)
+                arrayOfColors.append(white)
+                arrayOfColors.append(gray)
+                arrayOfColors.append(brown)
+                arrayOfColors.append(pastel)
+                arrayOfColors.append(bright)
+            case 2:
+                var black = Items(image: "sweaters-icon.png", type: "Black")
+                var white = Items(image: "sweaters-icon.png", type: "White")
+                var gray = Items(image: "sweaters-icon.png", type: "Gray")
+                var brown = Items(image: "sweaters-icon.png", type: "Brown")
+                var pastel = Items(image: "sweaters-icon.png", type: "Pastel Colors")
+                var bright = Items(image: "sweaters-icon.png", type: "Bright Colors")
+                
+                arrayOfColors.append(black)
+                arrayOfColors.append(white)
+                arrayOfColors.append(gray)
+                arrayOfColors.append(brown)
+                arrayOfColors.append(pastel)
+                arrayOfColors.append(bright)
+            case 3:
+                var black = Items(image: "outerwear-icon.png", type: "Black")
+                var white = Items(image: "outerwear-icon.png", type: "White")
+                var gray = Items(image: "outerwear-icon.png", type: "Gray")
+                var brown = Items(image: "outerwear-icon.png", type: "Brown")
+                var navy = Items(image: "outerwear-icon.png", type: "Navy")
+                
+                arrayOfColors.append(black)
+                arrayOfColors.append(white)
+                arrayOfColors.append(gray)
+                arrayOfColors.append(brown)
+                arrayOfColors.append(navy)
+            default:
+                var black = Items(image: "blazer-icon.png", type: "Black")
+                var white = Items(image: "blazer-icon.png", type: "White")
+                var gray = Items(image: "blazer-icon.png", type: "Gray")
+                var brown = Items(image: "blazer-icon.png", type: "Brown")
+                var navy = Items(image: "blazer-icon.png", type: "Navy")
+                
+                arrayOfColors.append(black)
+                arrayOfColors.append(white)
+                arrayOfColors.append(gray)
+                arrayOfColors.append(brown)
+                arrayOfColors.append(navy)
+            }
         default:
-            var black = Items(image: "tshirt-icon.png", type: "Black")
-            var white = Items(image: "tshirt-icon.png", type: "White")
-            var gray = Items(image: "tshirt-icon.png", type: "Gray")
-            var brown = Items(image: "tshirt-icon.png", type: "Brown")
-            var navy = Items(image: "tshirt-icon.png", type: "Navy")
+            var black = Items(image: "accessories-icon.png", type: "Black")
+            var white = Items(image: "accessories-icon.png", type: "White")
+            var gray = Items(image: "accessories-icon.png", type: "Gray")
+            var brown = Items(image: "accessories-icon.png", type: "Brown")
+            var navy = Items(image: "accessories-icon.png", type: "Navy")
             
             arrayOfColors.append(black)
             arrayOfColors.append(white)
