@@ -17,6 +17,10 @@ class CustomCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var customizeLabel: UILabel!
     @IBOutlet weak var customizeImage: UIImageView!
     
+    @IBOutlet weak var finalizeImage: UIImageView!
+    @IBOutlet weak var finalizeLabel: UILabel!
+    
+    
     func setItemCell(itemLabelText: String, itemImageName: String) {
         self.itemLabel.text = itemLabelText
         self.itemImage.image = UIImage(named: itemImageName)
@@ -25,6 +29,11 @@ class CustomCollectionViewCell: UICollectionViewCell {
     func setCustomizeCell(customizeLabelText: String, customizeImageName: String) {
         self.customizeLabel.text = customizeLabelText
         self.customizeImage.image = UIImage(named: customizeImageName)
+    }
+    
+    func setFinalizeCell(finalizeLabelText: String, finalizeImageName: String) {
+        self.finalizeLabel.text = finalizeLabelText
+        self.finalizeImage.image = UIImage(named: finalizeImageName)
     }
     
 }

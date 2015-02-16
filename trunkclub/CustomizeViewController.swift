@@ -24,9 +24,8 @@ class CustomizeViewController: UIViewController, UICollectionViewDelegateFlowLay
     var section : Int!
     var item : Int!
     var clothingItem : Items!
-    var itemChosen : ItemGroup!
     var itemsChosenArray : [ItemGroup] = []
-    
+    var itemChosen : ItemGroup!
     var arrayOfStyles = [Items]()
     var arrayOfColors = [Items]()
     
@@ -492,53 +491,58 @@ class CustomizeViewController: UIViewController, UICollectionViewDelegateFlowLay
     
     
     @IBAction func addCustomizations(sender: AnyObject) {
-        var paths = self.customizeCollectionView.indexPathsForSelectedItems()
-        
-        if paths.count == 0 {
-            println("No Items Chosen")
-        }
-        else {
-            var stylesChosen : [Items]! = []
-            var colorsChosen : [Items]! = []
+            }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == "returnToBuild" {
+            var paths = self.customizeCollectionView.indexPathsForSelectedItems()
             
-            for path in paths {
-            
-                var selectedSection = path.section
-                var selectedRow = path.row
+            if paths.count == 0 {
+                println("No Items Chosen")
+            }
+            else {
+
+                var stylesChosen : [Items]! = []
+                var colorsChosen : [Items]! = []
                 
-                var selectedItem = sectionData[selectedSection][selectedRow]
+                for path in paths {
+                    
+                    var selectedSection = path.section
+                    var selectedRow = path.row
+                    
+                    var selectedItem = sectionData[selectedSection][selectedRow]
+                    
+                    if (selectedSection == 0) {
+                        //styles
+                        var style: Items = selectedItem
+                        println(style.type)
+                        
+                        //append to styles array of items
+                        stylesChosen.append(style)
+                    }
+                    else {
+                        
+                        //colors
+                        var color: Items = selectedItem
+                        
+                        println(color.type)
+                        
+                        //append to colors array of items
+                        colorsChosen.append(color)
+                        
+                    }
+                    
+                }
                 
-                if (selectedSection == 0) {
-                    //styles
-                    var style: Items = selectedItem
-                    println(style.type)
-                    
-                    //append to styles array of items
-                    stylesChosen.append(style)
-                }
-                else {
-                    
-                    //colors
-                    var color: Items = selectedItem
-                    
-                    println(color.type)
-                    
-                    //append to colors array of items
-                    colorsChosen.append(color)
-                    
-                }
+                itemChosen = ItemGroup(clothingType: clothingItem, styles: stylesChosen, colors: colorsChosen)
+                
+                //append to items chosen array
+                itemsChosenArray.append(itemChosen)
+                
                 
             }
             
-            itemChosen = ItemGroup(clothingType: clothingItem, styles: stylesChosen, colors: colorsChosen)
-            
-            //append to items chosen array
-            itemsChosenArray.append(itemChosen)
-            
-            
         }
-    
     }
-    
     
 }

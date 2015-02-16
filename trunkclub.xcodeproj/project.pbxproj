@@ -17,6 +17,7 @@
 		E4EAD7151A6CAA1B00BD3955 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E4EAD7141A6CAA1B00BD3955 /* Images.xcassets */; };
 		E4EAD7181A6CAA1B00BD3955 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = E4EAD7161A6CAA1B00BD3955 /* LaunchScreen.xib */; };
 		E4EAD7241A6CAA1B00BD3955 /* trunkclubTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4EAD7231A6CAA1B00BD3955 /* trunkclubTests.swift */; };
+		E4F033B91A91BA0C000694E0 /* FinalizeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4F033B81A91BA0C000694E0 /* FinalizeViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,6 +45,7 @@
 		E4EAD71D1A6CAA1B00BD3955 /* trunkclubTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = trunkclubTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		E4EAD7221A6CAA1B00BD3955 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E4EAD7231A6CAA1B00BD3955 /* trunkclubTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = trunkclubTests.swift; sourceTree = "<group>"; };
+		E4F033B81A91BA0C000694E0 /* FinalizeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FinalizeViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -89,6 +91,7 @@
 				E45749F21A8D5122006A9BD3 /* ItemGroup.swift */,
 				E4EAD70D1A6CAA1B00BD3955 /* AppDelegate.swift */,
 				E4EAD7111A6CAA1B00BD3955 /* Main.storyboard */,
+				E4F033B81A91BA0C000694E0 /* FinalizeViewController.swift */,
 				E49306141A6EFAFD008F7AAE /* WantsViewController.swift */,
 				E4D2D6241A71D8910096F05E /* CustomizeViewController.swift */,
 				E4D2D6201A7190C70096F05E /* CustomCollectionViewCell.swift */,
@@ -225,6 +228,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E4F033B91A91BA0C000694E0 /* FinalizeViewController.swift in Sources */,
 				E4D2D6211A7190C70096F05E /* CustomCollectionViewCell.swift in Sources */,
 				E49306151A6EFAFD008F7AAE /* WantsViewController.swift in Sources */,
 				E45749F31A8D5122006A9BD3 /* ItemGroup.swift in Sources */,

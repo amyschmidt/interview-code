@@ -30,7 +30,7 @@ class WantsViewController: UIViewController, UICollectionViewDelegateFlowLayout,
     var arrayOfAccessories = [Items]()
     var arrayOfMore = [Items]()
     
-    var itemsChosenArray : [[ItemGroup]] = []
+    var itemsChosenArray : [ItemGroup] = []
     
     
     override func viewDidLoad() {
@@ -58,7 +58,18 @@ class WantsViewController: UIViewController, UICollectionViewDelegateFlowLayout,
     }
 
     override func viewWillAppear(animated: Bool) {
-        println("View will appear in Build: \(itemsChosenArray)")
+        println(itemsChosenArray.count)
+        
+        for item in itemsChosenArray {
+            println("View will appear in Build Type: \(item.clothingType.type)")
+            for style in item.styles {
+                println("Styles: \(style.type)")
+            }
+            for color in item.colors {
+                println("Colors: \(color.type)")
+            }
+        }
+        
         
         //declare navigation Bar
         var navBar = self.navigationController?.navigationBar
@@ -71,6 +82,12 @@ class WantsViewController: UIViewController, UICollectionViewDelegateFlowLayout,
     }
     
     @IBAction func returnToBuild(segue: UIStoryboardSegue){
+        let customVC = segue.sourceViewController as CustomizeViewController
+        
+        if let item = customVC.itemChosen {
+            println("ITEM: \(item.clothingType.type)")
+            itemsChosenArray.append(item)
+        }
 
     }
     
@@ -206,21 +223,27 @@ class WantsViewController: UIViewController, UICollectionViewDelegateFlowLayout,
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == "customize" {
+            var customizeVC: CustomizeViewController = segue.destinationViewController as CustomizeViewController
         
-        var customizeVC: CustomizeViewController = segue.destinationViewController as CustomizeViewController
+            let cell = sender as CustomCollectionViewCell
+            let path = self.itemCollectionView.indexPathForCell(cell)
         
-        let cell = sender as CustomCollectionViewCell
-        let path = self.itemCollectionView.indexPathForCell(cell)
+            selectedSection = path?.section
+            selectedItem = path?.row
+            var clothingItem: Items! = sectionData[selectedSection][selectedItem]
         
-        selectedSection = path?.section
-        selectedItem = path?.row
-        var clothingItem: Items! = sectionData[selectedSection][selectedItem]
+            println("Prepare for Segue: Section Selected: \(selectedSection) Item Selected: \(selectedItem) Clothing Item: \(clothingItem)")
         
-        println("Prepare for Segue: Section Selected: \(selectedSection) Item Selected: \(selectedItem) Clothing Item: \(clothingItem)")
-        
-        customizeVC.section = selectedSection
-        customizeVC.item = selectedItem
-        customizeVC.clothingItem = clothingItem
+            customizeVC.section = selectedSection
+            customizeVC.item = selectedItem
+            customizeVC.clothingItem = clothingItem
+        }
+        else if segue.identifier == "finalize" {
+            var finalizeVC: FinalizeViewController = segue.destinationViewController as FinalizeViewController
+            
+            finalizeVC.itemsChosenArray = itemsChosenArray
+        }
     }
 
 }
