@@ -16,12 +16,9 @@ class FinalizeViewController: UIViewController {
     }
     
     var itemsChosenArray : [ItemGroup] = []
-    var sectionData = Array<Array<ItemGroup>>()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        sectionData.append(itemsChosenArray)
         
     }
 
@@ -49,25 +46,28 @@ class FinalizeViewController: UIViewController {
         navigationItem.title = "Finalize"
     }
     
-    func numberOfSectionsInCollectionView(collectionView: UICollectionView) -> Int {
+    /*func numberOfSectionsInCollectionView(collectionView: UICollectionView) -> Int {
         return itemsChosenArray.count
     }
     
     //return number of items in each section
     func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return sectionData[section].count
+        return itemsChosenArray[section].styles.count + itemsChosenArray[section].colors.count
         
     }
     
     
     
     //set cells
-    /*func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
+    func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
         
         let cell: CustomCollectionViewCell = collectionView.dequeueReusableCellWithReuseIdentifier("FinalCell", forIndexPath: indexPath) as CustomCollectionViewCell
         
+        let itemStyle = itemsChosenArray[indexPath.section].styles[0]
+        //let itemColor = itemsChosenArray[indexPath.section].colors[0]
         
-        cell.setFinalizeCell()
+        cell.setFinalizeCell(itemStyle.type, finalizeImageName: itemStyle.image)
+        //cell.setFinalizeCell(itemColor.type, finalizeImageName: itemColor.image)
         
         cell.backgroundColor = UIColor.whiteColor()
         
