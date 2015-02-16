@@ -30,20 +30,13 @@ class WantsViewController: UIViewController, UICollectionViewDelegateFlowLayout,
     var arrayOfAccessories = [Items]()
     var arrayOfMore = [Items]()
     
+    var itemsChosenArray : [[ItemGroup]] = []
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        //declare navigation Bar
-        var navBar = self.navigationController?.navigationBar
-        
-        //set navBar style and title
-        navBar?.backgroundColor = UIColor(red:44.0/255.0, green:62.0/255.0, blue:80.0/255.0, alpha:1.0)
-        navBar?.barStyle = UIBarStyle.Black
-        navBar?.tintColor = UIColor.whiteColor()
-        navigationItem.title = "Build Your Own"
-
-        
+               
         //wantsView.frame.height = itemCollectionView.intrinsicContentSize()
         
         self.setUpShirts()
@@ -61,8 +54,25 @@ class WantsViewController: UIViewController, UICollectionViewDelegateFlowLayout,
         
         self.itemCollectionView.allowsMultipleSelection = false
         
+        
     }
 
+    override func viewWillAppear(animated: Bool) {
+        println("View will appear in Build: \(itemsChosenArray)")
+        
+        //declare navigation Bar
+        var navBar = self.navigationController?.navigationBar
+        
+        //set navBar style and title
+        navBar?.backgroundColor = UIColor(red:44.0/255.0, green:62.0/255.0, blue:80.0/255.0, alpha:1.0)
+        navBar?.barStyle = UIBarStyle.Black
+        navBar?.tintColor = UIColor.whiteColor()
+        navigationItem.title = "Build Your Own"
+    }
+    
+    @IBAction func returnToBuild(segue: UIStoryboardSegue){
+
+    }
     
     func setUpShirts() {
         //create array of shirt types and images

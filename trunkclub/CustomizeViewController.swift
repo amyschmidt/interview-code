@@ -16,6 +16,7 @@ class CustomizeViewController: UIViewController, UICollectionViewDelegateFlowLay
     
 
     @IBOutlet weak var customizeCollectionView: UICollectionView!
+    var wantsViewController: UIViewController?
     
     var sectionNames : [String] = ["STYLES", "COLORS"]
     var sectionData = Array<Array<Items>>()
@@ -23,8 +24,8 @@ class CustomizeViewController: UIViewController, UICollectionViewDelegateFlowLay
     var section : Int!
     var item : Int!
     var clothingItem : Items!
-    var itemChosen : ItemGroup?
-    var itemsChosenArray : [ItemGroup]?
+    var itemChosen : ItemGroup!
+    var itemsChosenArray : [ItemGroup] = []
     
     var arrayOfStyles = [Items]()
     var arrayOfColors = [Items]()
@@ -32,15 +33,7 @@ class CustomizeViewController: UIViewController, UICollectionViewDelegateFlowLay
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        //declare navigation Bar
-        var navBar = self.navigationController?.navigationBar
-        
-        //set navBar style and title
-        navBar?.backgroundColor = UIColor(red:44.0/255.0, green:62.0/255.0, blue:80.0/255.0, alpha:1.0)
-        navBar?.barStyle = UIBarStyle.Black
-        navBar?.tintColor = UIColor.whiteColor()
-        navigationItem.title = "Customize"
-        
+            
         println("View Did Load: Section Selected: \(section) Item Selected: \(item) Clothing Item: \(clothingItem)")
         
         self.setUpStyles()
@@ -51,6 +44,17 @@ class CustomizeViewController: UIViewController, UICollectionViewDelegateFlowLay
         
         self.customizeCollectionView.allowsMultipleSelection = true
         // Do any additional setup after loading the view.
+    }
+    
+    override func viewWillAppear(animated: Bool) {
+        //declare navigation Bar
+        var navBar = self.navigationController?.navigationBar
+        
+        //set navBar style and title
+        navBar?.backgroundColor = UIColor(red:44.0/255.0, green:62.0/255.0, blue:80.0/255.0, alpha:1.0)
+        navBar?.barStyle = UIBarStyle.Black
+        navBar?.tintColor = UIColor.whiteColor()
+        navigationItem.title = "Customize"
     }
     
     
@@ -490,7 +494,6 @@ class CustomizeViewController: UIViewController, UICollectionViewDelegateFlowLay
     @IBAction func addCustomizations(sender: AnyObject) {
         var paths = self.customizeCollectionView.indexPathsForSelectedItems()
         
-        
         if paths.count == 0 {
             println("No Items Chosen")
         }
@@ -498,49 +501,44 @@ class CustomizeViewController: UIViewController, UICollectionViewDelegateFlowLay
             var stylesChosen : [Items]! = []
             var colorsChosen : [Items]! = []
             
-        for path in paths {
+            for path in paths {
             
-            
-            
-            var selectedSection = path.section
-            var selectedRow = path.row
-            
-            var selectedItem = sectionData[selectedSection][selectedRow]
-            
-            
-            if (selectedSection == 0) {
-                //styles
+                var selectedSection = path.section
+                var selectedRow = path.row
                 
-                var style: Items = selectedItem
-                println(style.type)
+                var selectedItem = sectionData[selectedSection][selectedRow]
                 
+                if (selectedSection == 0) {
+                    //styles
+                    var style: Items = selectedItem
+                    println(style.type)
+                    
+                    //append to styles array of items
+                    stylesChosen.append(style)
+                }
+                else {
+                    
+                    //colors
+                    var color: Items = selectedItem
+                    
+                    println(color.type)
+                    
+                    //append to colors array of items
+                    colorsChosen.append(color)
+                    
+                }
                 
-                //append to styles array of items
-                stylesChosen.append(style)
-
-            }
-            else {
-                //colors
-                
-                var color: Items = selectedItem
-                println(color.type)
-                
-                
-                //append to colors array of items
-                colorsChosen.append(color)
-            }
-            
-
             }
             
             itemChosen = ItemGroup(clothingType: clothingItem, styles: stylesChosen, colors: colorsChosen)
-
-            
             
             //append to items chosen array
+            itemsChosenArray.append(itemChosen)
+            
             
         }
-        
+    
     }
-
+    
+    
 }
