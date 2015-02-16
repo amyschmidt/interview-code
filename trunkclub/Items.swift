@@ -10,8 +10,8 @@ import Foundation
 
 class Items
 {
-    var image = "blank"
-    var type = "type"
+    var image: String
+    var type: String
     
     init(image: String, type: String) {
         self.type = type
@@ -23,3 +23,4 @@ class Items
         return Items(image: image, type: type)
     }*/
 }
+

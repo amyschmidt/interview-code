@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E45749F31A8D5122006A9BD3 /* ItemGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = E45749F21A8D5122006A9BD3 /* ItemGroup.swift */; };
 		E49306151A6EFAFD008F7AAE /* WantsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E49306141A6EFAFD008F7AAE /* WantsViewController.swift */; };
 		E4D2D6211A7190C70096F05E /* CustomCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4D2D6201A7190C70096F05E /* CustomCollectionViewCell.swift */; };
 		E4D2D6251A71D8910096F05E /* CustomizeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4D2D6241A71D8910096F05E /* CustomizeViewController.swift */; };
@@ -29,6 +30,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		E45749F21A8D5122006A9BD3 /* ItemGroup.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemGroup.swift; sourceTree = "<group>"; };
 		E49306141A6EFAFD008F7AAE /* WantsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WantsViewController.swift; sourceTree = "<group>"; };
 		E4D2D6201A7190C70096F05E /* CustomCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomCollectionViewCell.swift; sourceTree = "<group>"; };
 		E4D2D6241A71D8910096F05E /* CustomizeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomizeViewController.swift; sourceTree = "<group>"; };
@@ -84,6 +86,7 @@
 			isa = PBXGroup;
 			children = (
 				E4D2D6261A7300F60096F05E /* Items.swift */,
+				E45749F21A8D5122006A9BD3 /* ItemGroup.swift */,
 				E4EAD70D1A6CAA1B00BD3955 /* AppDelegate.swift */,
 				E4EAD7111A6CAA1B00BD3955 /* Main.storyboard */,
 				E49306141A6EFAFD008F7AAE /* WantsViewController.swift */,
@@ -224,6 +227,7 @@
 			files = (
 				E4D2D6211A7190C70096F05E /* CustomCollectionViewCell.swift in Sources */,
 				E49306151A6EFAFD008F7AAE /* WantsViewController.swift in Sources */,
+				E45749F31A8D5122006A9BD3 /* ItemGroup.swift in Sources */,
 				E4D2D6251A71D8910096F05E /* CustomizeViewController.swift in Sources */,
 				E4D2D6271A7300F60096F05E /* Items.swift in Sources */,
 				E4EAD70E1A6CAA1B00BD3955 /* AppDelegate.swift in Sources */,

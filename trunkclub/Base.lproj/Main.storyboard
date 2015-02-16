@@ -43,14 +43,14 @@
                                                             <rect key="frame" x="0.0" y="0.0" width="330" height="49"/>
                                                             <autoresizingMask key="autoresizingMask"/>
                                                             <subviews>
-                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SXl-lS-KL8">
-                                                                    <rect key="frame" x="62" y="19" width="42" height="21"/>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SXl-lS-KL8">
+                                                                    <rect key="frame" x="73" y="14" width="42" height="21"/>
                                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
-                                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="iM0-En-cna">
-                                                                    <rect key="frame" x="0.0" y="8" width="45" height="45"/>
+                                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="iM0-En-cna">
+                                                                    <rect key="frame" x="18" y="2" width="45" height="45"/>
                                                                     <constraints>
                                                                         <constraint firstAttribute="height" constant="45" id="DkV-us-iag"/>
                                                                         <constraint firstAttribute="width" constant="45" id="faa-jk-XYO"/>
@@ -109,7 +109,11 @@
                     </view>
                     <toolbarItems/>
                     <navigationItem key="navigationItem" title="Customize" id="YQG-V3-mGS">
-                        <barButtonItem key="rightBarButtonItem" title="Next" id="Rrf-6e-it9"/>
+                        <barButtonItem key="rightBarButtonItem" title="Add" id="Rrf-6e-it9">
+                            <connections>
+                                <action selector="addCustomizations:" destination="hjT-SZ-HPf" id="LRS-1W-Sv0"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="customizeCollectionView" destination="JPY-oC-xiy" id="joB-N2-mYg"/>
@@ -242,7 +246,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ut2-Td-6Ar" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="748" y="348"/>
+            <point key="canvasLocation" x="891" y="330"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="rHD-pe-Vxt">

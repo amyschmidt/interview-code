@@ -58,7 +58,6 @@ class WantsViewController: UIViewController, UICollectionViewDelegateFlowLayout,
         sectionData.append(arrayOfShoes)
         sectionData.append(arrayOfAccessories)
         sectionData.append(arrayOfMore)
-        println(sectionData)
         
         self.itemCollectionView.allowsMultipleSelection = false
         
@@ -205,11 +204,13 @@ class WantsViewController: UIViewController, UICollectionViewDelegateFlowLayout,
         
         selectedSection = path?.section
         selectedItem = path?.row
+        var clothingItem: Items! = sectionData[selectedSection][selectedItem]
         
-        println("Prepare for Segue: Section Selected: \(selectedSection) Item Selected: \(selectedItem)")
+        println("Prepare for Segue: Section Selected: \(selectedSection) Item Selected: \(selectedItem) Clothing Item: \(clothingItem)")
         
         customizeVC.section = selectedSection
         customizeVC.item = selectedItem
+        customizeVC.clothingItem = clothingItem
     }
 
 }

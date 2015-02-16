@@ -22,6 +22,9 @@ class CustomizeViewController: UIViewController, UICollectionViewDelegateFlowLay
 
     var section : Int!
     var item : Int!
+    var clothingItem : Items!
+    var itemChosen : ItemGroup?
+    var itemsChosenArray : [ItemGroup]?
     
     var arrayOfStyles = [Items]()
     var arrayOfColors = [Items]()
@@ -38,7 +41,7 @@ class CustomizeViewController: UIViewController, UICollectionViewDelegateFlowLay
         navBar?.tintColor = UIColor.whiteColor()
         navigationItem.title = "Customize"
         
-        println("View Did Load: Section Selected: \(section) Item Selected: \(item)")
+        println("View Did Load: Section Selected: \(section) Item Selected: \(item) Clothing Item: \(clothingItem)")
         
         self.setUpStyles()
         self.setUpColors()
@@ -460,8 +463,10 @@ class CustomizeViewController: UIViewController, UICollectionViewDelegateFlowLay
         
         cell.backgroundColor = UIColor.whiteColor()
         
+        
         return cell
     }
+    
     
      func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
         var selectedCell = customizeCollectionView.cellForItemAtIndexPath(indexPath) as CustomCollectionViewCell
@@ -479,6 +484,63 @@ class CustomizeViewController: UIViewController, UICollectionViewDelegateFlowLay
         
         deselectedCell.backgroundColor = UIColor.whiteColor()
        
+    }
+    
+    
+    @IBAction func addCustomizations(sender: AnyObject) {
+        var paths = self.customizeCollectionView.indexPathsForSelectedItems()
+        
+        
+        if paths.count == 0 {
+            println("No Items Chosen")
+        }
+        else {
+            var stylesChosen : [Items]! = []
+            var colorsChosen : [Items]! = []
+            
+        for path in paths {
+            
+            
+            
+            var selectedSection = path.section
+            var selectedRow = path.row
+            
+            var selectedItem = sectionData[selectedSection][selectedRow]
+            
+            
+            if (selectedSection == 0) {
+                //styles
+                
+                var style: Items = selectedItem
+                println(style.type)
+                
+                
+                //append to styles array of items
+                stylesChosen.append(style)
+
+            }
+            else {
+                //colors
+                
+                var color: Items = selectedItem
+                println(color.type)
+                
+                
+                //append to colors array of items
+                colorsChosen.append(color)
+            }
+            
+
+            }
+            
+            itemChosen = ItemGroup(clothingType: clothingItem, styles: stylesChosen, colors: colorsChosen)
+
+            
+            
+            //append to items chosen array
+            
+        }
+        
     }
 
 }
